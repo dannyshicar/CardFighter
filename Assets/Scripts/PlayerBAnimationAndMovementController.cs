@@ -85,7 +85,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
     // public int maxHealth = 100;
     // public int currentHealth;
     private UnitHealth playerHealth = new UnitHealth(100, 100);
-    private UnitEnergy playerEnergy = new UnitEnergy(100f, 100f, 10f);
+    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 2f);
     // public PlayerHealthBar healthBar;
     [SerializeField] HealthBar _healthBar;
     [SerializeField] EnergyBar _energyBar;
@@ -121,9 +121,9 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
         playerInput.CharacterControls.LeftClick.canceled += onLeftClick;
 
         setupJumpVariables();
-        _healthBar.setMaxHealth(playerHealth.Health);
+        _healthBar.setMaxHealth(playerHealth.MaxHealth);
         _healthBar.setHealth(playerHealth.Health);
-        _energyBar.setMaxEnergy(playerEnergy.Energy);
+        _energyBar.setMaxEnergy(playerEnergy.MaxEnergy);
         _energyBar.setEnergy(playerEnergy.Energy);
         _skillBar.SetImage(skillIcons);
         InvokeRepeating("regenEnergy", 0f, 1f);
