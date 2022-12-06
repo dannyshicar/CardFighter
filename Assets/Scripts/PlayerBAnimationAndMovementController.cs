@@ -47,6 +47,8 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
 
     [SerializeField] private List<GameObject> skillPrefabs;
     [SerializeField] private List<GameObject> skillPreviewPrefabs;
+    public List<Sprite> skillIcons;
+    [SerializeField] SkillBar _skillBar;
 
     // set skill attributes
     List<Skill> skillsBaseValue = new List<Skill>(){
@@ -123,6 +125,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
         _healthBar.setHealth(playerHealth.Health);
         _energyBar.setMaxEnergy(playerEnergy.Energy);
         _energyBar.setEnergy(playerEnergy.Energy);
+        _skillBar.SetImage(skillIcons);
         InvokeRepeating("regenEnergy", 0f, 1f);
         if(isAI){
             InvokeRepeating("AIControl", 0f, 1f);
@@ -431,9 +434,17 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
             }
         }
     }
+    void updateSkillIconCooldown()
+    {
+        for(int i = 0; i < skillsBaseValue.Count; i++)
+        {
+            _skillBar.updateFillAmount(i, playerEnergy.Energy, skillsBaseValue[i].energyCost);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        updateSkillIconCooldown();
         //get mouse position
         screenPosition = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
