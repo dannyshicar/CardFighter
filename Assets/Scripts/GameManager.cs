@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    
+    // round settings
     public static int round = 1;
+    public static int bossHP = 100;
+
     bool gameHasEnded = false;
 
     public float restartDelay = 1f;
@@ -39,6 +43,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void resetRoundSettings()
+    {
+        round = 1;
+        bossHP = 100;
+    }
+
     public void BeginGame(){
         Time.timeScale = 1f;
     }
@@ -61,7 +71,7 @@ public class GameManager : MonoBehaviour
         if(gameHasEnded) return;
         gameHasEnded = true;
         Debug.Log("Game Lost!");
-        round = 1;
+        resetRoundSettings();
         failLevelUI.SetActive(true);
         AHealthBar.SetActive(false);
         BHealthBar.SetActive(false);
@@ -73,13 +83,14 @@ public class GameManager : MonoBehaviour
         if(gameHasEnded) return;
         if(round < 3){
             round++;
+            bossHP *= 2;
             GameRoundCountText.text = round.ToString();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
         gameHasEnded = true;
         Debug.Log("Game Won!");
-        round = 1;
+        resetRoundSettings();
         completeLevelUI.SetActive(true);
         AHealthBar.SetActive(false);
         BHealthBar.SetActive(false);
