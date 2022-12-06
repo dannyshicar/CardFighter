@@ -120,7 +120,9 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
 
         setupJumpVariables();
         _healthBar.setMaxHealth(playerHealth.Health);
+        _healthBar.setHealth(playerHealth.Health);
         _energyBar.setMaxEnergy(playerEnergy.Energy);
+        _energyBar.setEnergy(playerEnergy.Energy);
         InvokeRepeating("regenEnergy", 0f, 1f);
         if(isAI){
             InvokeRepeating("AIControl", 0f, 1f);
