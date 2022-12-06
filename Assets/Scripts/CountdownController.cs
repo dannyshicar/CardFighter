@@ -25,7 +25,11 @@ public class CountdownController : MonoBehaviour
             countdownTime--;
         }
 
+        
+        countdownDisplay.text = "Round " + GameManager.round.ToString();
+        yield return new WaitForSecondsRealtime(1.5f);
         countdownDisplay.text = "Start!";
+        yield return new WaitForSecondsRealtime(1f);
 		
 		GameManager.Instance.BeginGame();
 
