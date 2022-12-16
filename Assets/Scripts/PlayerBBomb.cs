@@ -11,7 +11,7 @@ public class PlayerBBomb : MonoBehaviour
     [SerializeField] private GameObject explodePrefabs;
     
     public GameObject myself;
-    public int enemyLayer = 14;
+    private int mapLayer = 6;
 
     private void Start()
     {
@@ -19,23 +19,29 @@ public class PlayerBBomb : MonoBehaviour
         rb = GetComponent<Rigidbody>();       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        GameObject obj;
-        if (hitTarget) return;
-        else hitTarget = true;
+        GameObject explode;
+        GameObject playerA;
+
+        // if (hitTarget) return;
+        // else hitTarget = true;
 
 
-        this.gameObject.SetActive(false);
-        obj = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
-        Debug.Log("Layer = " + collision.gameObject.layer);
-        if(collision.gameObject.layer == enemyLayer){
-            Debug.Log("hit");
-            collision.gameObject.GetComponent<PlayerAAnimationAndMovementController>().takeDamage(10);
-
+        if(collision.gameObject.tag == "PlayerABody"){
+            this.gameObject.SetActive(false);
+            explode = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
+            playerA = GameObject.Find("PlayerA");
+            playerA.GetComponent<PlayerAAnimationAndMovementController>().takeDamage(10);
+            Destroy(explode, 2);
+            Destroy(this.gameObject, 2);
         }
-        Destroy(obj, 2);
-        Destroy(this.gameObject, 2);
+        if(collision.gameObject.layer == mapLayer){
+            this.gameObject.SetActive(false);
+            explode = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
+            Destroy(explode, 2);
+            Destroy(this.gameObject, 2);
+        }
 
         // // enemy hit
         // if (collision.gameObject.GetComponent<BasicEnemy>() != null)

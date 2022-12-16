@@ -47,19 +47,22 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
 
 
     [SerializeField] private List<GameObject> skillPrefabs;
-    [SerializeField] private List<GameObject> skillPreviewPrefabs;
     public List<Sprite> skillIcons;
     [SerializeField] SkillBar _skillBar;
+    public List<SkillTemplate> skills;
 
     // set skill attributes
-    List<Skill> skillsBaseValue = new List<Skill>(){
-        new Skill("Plasma", 0, 40, 2.0f, 2.0f, 2.0f, 1.0f, 2.0f, 20f),
-        new Skill("Small", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f)
-    };
+    // List<Skill> skillsBaseValue = new List<Skill>(){
+    //     new Skill("Plasma", 0, 40, 2.0f, 2.0f, 2.0f, 1.0f, 2.0f, 20f),
+    //     new Skill("Small", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f),
+    //     new Skill("Line", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f)
+    // };
     // skillsBaseValue.Add(new Skill("Plasma", 0, 40, 2.0f, 2.0f, 2.0f, 1.0f, 2.0f, 20f));
     // skillsBaseValue.Add(new Skill("Small", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f));
     // Skill plasmaSkill = new Skill("Plasma", 0, 40, 2.0f, 2.0f, 2.0f, 1.0f, 2.0f, 20f);
     // Skill smallSkill = new Skill("Small", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f);
+
+    public List<int> skillPool = new List<int>(){1, 2, 3};
 
 
     bool isCast1Pressed = false;
@@ -83,9 +86,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         new Vector3(0, 0, 0)
     };
     
-    // float skill1Delay = 0.5f;
-    // float skill2Delay = 0.5f;
-    float skill3Delay = 0.5f;
+
     Vector3 previewPosition;
     // public int maxHealth = 100;
     // public int currentHealth;
@@ -97,6 +98,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     public GameObject objectToThrow;
     // public float throwForce;
     // public float throwUpwardForce;
+    Vector3 startPos, endPos;
 
     //Awake is called earlier than Start in Unity's event life cycle
     void Awake(){
@@ -107,6 +109,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         line = GetComponent<LineRenderer>();
+        skills = GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().skills;
         
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
@@ -240,40 +243,29 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         //get parameter values from animator
         bool isWalking = animator.GetBool(isWalkingHash);
         bool isRunning = animator.GetBool(isRunningHash);
-        // isMovementPressed, isWalking, isRunPressed, isRunning
-        
-        // // start walking if movement pressed is true and not already walking
-        // if(isMovementPressed){
-        //     animator.SetBool(isWalkingHash, true);
-        // }
-        // if(!isMovementPressed){
-        //     animator.SetBool(isWalkingHash, false);
-        //     animator.SetBool(isRunningHash, false);
-        // }
-        // if(isMovementPressed && isRunPressed){
-        //     animator.SetBool(isWalkingHash, true);
-        //     animator.SetBool(isRunningHash, true);
-        // }
-        // if(!isRunPressed){
-        //     animator.SetBool(isRunningHash, false);
-        // }
 
         // start walking if movement pressed is true and not already walking
         if(isMovementPressed && !isWalking){
             animator.SetBool(isWalkingHash, true);
         }
         // stop walking if isMovementPressed is false and not already walking
-        else if(!isMovementPressed && isWalking){
+        if(!isMovementPressed && isWalking){
             animator.SetBool(isWalkingHash, false);
         }
         // run if movement and run pressed are true and not currentoy running
         if((isMovementPressed && isRunPressed) && !isRunning){
             animator.SetBool(isRunningHash, true);
         }
-        // stop running if movement or run pressed are false and currently running
-        else if((!isMovementPressed || !isRunPressed) && isRunning){
+        if(!isRunPressed){
             animator.SetBool(isRunningHash, false);
         }
+        // stop running if movement or run pressed are false and currently running
+        if((!isMovementPressed && !isRunPressed)){
+            animator.SetBool(isRunningHash, false);
+            animator.SetBool(isWalkingHash, false);
+        }
+        // Debug.Log(isWalking + " " + isRunning);
+        
     }
 
     void handleGravity(){
@@ -307,101 +299,123 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         }
     }
 
-    void _handleCastSkillHelper(int skillIdx){
-        // check and use energy
-        if(!skillsBaseValue[skillIdx].isReady(playerEnergy.Energy)) return;
-        useEnergy(skillsBaseValue[skillIdx].energyCost);
+    // void _handleCastSkillHelper(int skillIdx){
+    //     // check and use energy
+    //     if(!skillsBaseValue[skillIdx].isReady(playerEnergy.Energy)) return;
+    //     useEnergy(skillsBaseValue[skillIdx].energyCost);
 
-        GameObject skillPreviewPrefab = skillPreviewPrefabs[skillIdx];
-        CastPositions[skillIdx] = (isAI) ? AIMousePos : mousePos;
-        // previewPosition = CastPositions[skillIdx];
-        // previewPosition.z = -50f;
-        // GameObject obj = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
-        // Destroy(obj, skillsBaseValue[skillIdx].skillDelay);
-        // testSkill(skillIdx);
-        _handleSkillHelper(skillIdx);
-    }
+    //     GameObject skillPreviewPrefab = skillPreviewPrefabs[skillIdx];
+    //     CastPositions[skillIdx] = (isAI) ? AIMousePos : mousePos;
+    //     // previewPosition = CastPositions[skillIdx];
+    //     // previewPosition.z = -50f;
+    //     // GameObject obj = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
+    //     // Destroy(obj, skillsBaseValue[skillIdx].skillDelay);
+    //     // testSkill(skillIdx);
+    //     _handleSkillHelper(skillIdx);
+    // }
  
-    void _handleSkillHelper(int skillIdx){
-        GameObject skillPrefab, obj;
-        if(skillIdx == 1){
-            // Debug.Log("drop");
+    // void _handleSkillHelper(int skillIdx){
+    //     GameObject skillPrefab, obj;
+    //     if(skillIdx == 1){
+    //         // Debug.Log("drop");
 
-            Vector3 skillPos = mousePos;
-            skillPrefab = skillPrefabs[skillIdx];
-            obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
-        }
-        else if(skillIdx == 0){
-            // Debug.Log("throw");
+    //         Vector3 skillPos = mousePos;
+    //         skillPrefab = skillPrefabs[skillIdx];
+    //         obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
+    //     }
+    //     else if(skillIdx == 0){
+    //         // Debug.Log("throw");
 
-            Vector3 skillPos = transform.position;
-            skillPos.y += 1f;
-            skillPos.z = 0f;
+    //         Vector3 skillPos = transform.position;
+    //         skillPos.y += 1f;
+    //         skillPos.z = 0f;
 
-            skillPrefab = skillPrefabs[skillIdx];
+    //         skillPrefab = skillPrefabs[skillIdx];
   
-            obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
-        }
-    }
+    //         obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
+    //     }
+    //     else if(skillIdx == 2){
+
+    //         Vector3 skillPos = transform.position;
+    //         skillPos.y += 1f;
+    //         skillPos.z = 0f;
+
+    //         skillPrefab = skillPrefabs[skillIdx];
+    //         obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
+    //         // startPos = transform.position;
+    //         // startPos.y += 1f;
+    //         // endPos = mousePos;
+    //         // line.SetPositions(new Vector3[]{startPos, endPos});
+    //         // // GameObject skillPreviewPrefab = skillPreviewPrefabs[2];
+    //         // // previewPosition = mousePos;
+    //         // // previewPosition.z = -50f;
+    //         // // obj = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
+    //         // // previewPosition = transform.position;
+    //         // // previewPosition.z = -50f;
+    //         // // GameObject obj2 = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
+    //         // // Destroy(obj, skill3Delay);
+    //         // // Destroy(obj2, skill3Delay);
+    //         // Invoke("handleRayCast", skill3Delay);
+    //     }
+    //     else if(skillIdx == 3){
+    //         Vector3 skillPos = transform.position;
+    //         skillPos.y += 1f;
+    //         skillPos.z = 0f;
+
+    //         skillPrefab = skillPrefabs[skillIdx];
+    //         obj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
+
+    //     }
+    // }
+
     void handleCastSkill(){
         if(isCast1Pressed){
             isCast1Pressed = false;
-            _handleCastSkillHelper(0);
+            GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[0], playerEnergy.Energy);
+            // _handleCastSkillHelper(0);
         }
         if(isCast2Pressed){
             isCast2Pressed = false;
-            _handleCastSkillHelper(1);
+            GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[1], playerEnergy.Energy);
+            // _handleCastSkillHelper(1);
         }
         if(isCast3Pressed){
-            isCasting = true;
+            // isCasting = true;
+            isCast3Pressed = false;
+            GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[2], playerEnergy.Energy);
+            // _handleCastSkillHelper(2);
         }
-        if(isCasting){
-            //set the line
-            if(!PauseMenu.GameIsPaused){
-                line.SetPositions(new Vector3[]{transform.position, mousePos});
-            }
-            if(isLeftClick){
-                isCasting = false;
-                isLeftClick = false;
-                line.SetPositions(new Vector3[]{Vector3.zero, Vector3.zero});
-                Cast3Position = mousePos;
+        // if(isCasting){
+        //     //set the line
+        //     if(!PauseMenu.GameIsPaused){
+        //         line.SetPositions(new Vector3[]{transform.position, mousePos});
+        //     }
+        //     if(isLeftClick){
+        //         isCasting = false;
+        //         isLeftClick = false;
+        //         line.SetPositions(new Vector3[]{Vector3.zero, Vector3.zero});
+        //         Cast3Position = mousePos;
 
-                GameObject skillPreviewPrefab = skillPreviewPrefabs[2];
-                previewPosition = mousePos;
-                previewPosition.z = -50f;
-                GameObject obj = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
-                previewPosition = transform.position;
-                previewPosition.z = -50f;
-                GameObject obj2 = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
-                Destroy(obj, skill3Delay);
-                Destroy(obj2, skill3Delay);
-                Invoke("handleRayCast", skill3Delay);
-                // handleRayCast();
-            }
-        }
+        //         GameObject skillPreviewPrefab = skillPreviewPrefabs[2];
+        //         previewPosition = mousePos;
+        //         previewPosition.z = -50f;
+        //         GameObject obj = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
+        //         previewPosition = transform.position;
+        //         previewPosition.z = -50f;
+        //         GameObject obj2 = Instantiate(skillPreviewPrefab, previewPosition, skillPreviewPrefab.transform.rotation);
+        //         Destroy(obj, skill3Delay);
+        //         Destroy(obj2, skill3Delay);
+        //         Invoke("handleRayCast", skill3Delay);
+        //         // handleRayCast();
+        //     }
+        // }
     }
 
-    void handleRayCast(){
-        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Debug.Log("player :" + Cast3Position);
-        if (Physics.Raycast(transform.position, Cast3Position - transform.position, out hit, Vector3.Distance(transform.position, Cast3Position), mask)){
-            Debug.Log(hit.transform.name);
-            hit.transform.GetComponent<PlayerMovement>().takeDamage(10);
-            // if(hit.transform.GetComponent<Renderer>().material.color != Color.red){
-            //     hitCnt++;
-            //     hit.transform.GetComponent<Renderer>().material.color = Color.red;
-            // }
-            // if(hitCnt == enemyCnt){
-            //     FindObjectOfType<GameManager>().CompleteLevel();
-            // }
-        }
-    }
     void updateSkillIconCooldown()
     {
-        for(int i = 0; i < skillsBaseValue.Count; i++)
+        for(int i = 0; i < 3; i++)
         {
-            _skillBar.updateFillAmount(i, playerEnergy.Energy, skillsBaseValue[i].energyCost);
+            _skillBar.updateFillAmount(i, playerEnergy.Energy, skills[skillPool[i]].energyCost);
         }
     }
     // Update is called once per frame
@@ -429,14 +443,15 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         }
         handleGravity();
         handleJump();
-        if (Input.GetKeyDown("p")) {
-            takeDamage(20);
-        }
+        // if (Input.GetKeyDown("p")) {
+        //     takeDamage(20);
+        // }
         //player dead
         if (transform.position.y < -20f || playerHealth.Health <= 0) {
             // FindObjectOfType<GameManager>().FailLevel();
             GameManager.Instance.FailLevel();
         }
+        // Debug.Log(transform.position);
     }
 
     void OnEnable(){
@@ -452,8 +467,13 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         playerHealth.dmgUnit(damage);
         _healthBar.setHealth(playerHealth.Health);
     }
+
+    public void heal(int amount){
+        playerHealth.healUnit(amount);
+        _healthBar.setHealth(playerHealth.Health);
+    }
     
-    private void useEnergy(float energyCost)
+    public void useEnergy(float energyCost)
     {
         playerEnergy.useEnergy(energyCost);
         _energyBar.setEnergy(playerEnergy.Energy);

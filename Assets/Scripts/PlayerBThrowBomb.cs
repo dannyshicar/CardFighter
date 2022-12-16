@@ -29,7 +29,8 @@ public class PlayerBThrowBomb : MonoBehaviour
     void Throw(){
         GameObject bomb = Instantiate(bombPrefab, transform.position, bombPrefab.transform.rotation);
         Rigidbody rb = bomb.GetComponent<Rigidbody>();
-        Vector3 forceDirection = (mousePos - transform.position);
+        mousePos.y += 1;
+        Vector3 forceDirection = (mousePos - transform.position) * 3;
         rb.AddForce(forceDirection, ForceMode.Impulse);
     }
 }

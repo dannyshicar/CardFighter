@@ -19,23 +19,25 @@ public class PlayerBIce : MonoBehaviour
         rb = GetComponent<Rigidbody>();       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        GameObject obj;
+
         // if (hitTarget) return;
         // else hitTarget = true;
 
+        GameObject explode;
+        GameObject playerA;
 
-        this.gameObject.SetActive(false);
-        obj = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
-        Debug.Log("Layer = " + collision.gameObject.layer);
-        if(collision.gameObject.layer == enemyLayer){
-            Debug.Log("hit");
-            collision.gameObject.GetComponent<PlayerAAnimationAndMovementController>().takeDamage(15);
-
+        if(collision.gameObject.tag == "PlayerABody"){
+            this.gameObject.SetActive(false);
+            explode = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
+            playerA = GameObject.Find("PlayerA");
+            playerA.GetComponent<PlayerAAnimationAndMovementController>().takeDamage(15);
+            Destroy(explode, 2);
+            Destroy(this.gameObject, 2);
         }
-        Destroy(obj, 2);
-        Destroy(this.gameObject, 2);
+
+
     }
 
     void Update()
