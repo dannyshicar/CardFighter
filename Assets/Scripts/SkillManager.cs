@@ -10,6 +10,7 @@ public class SkillManager : MonoBehaviour
 
     [SerializeField] TMPro.TextMeshProUGUI nameText;
     [SerializeField] Image DisplayImage;
+    [SerializeField] TMPro.TextMeshProUGUI descriptionText;
 
     const int MAX_SKILL_SELECT = 5;
     int[] selectedSkills = new int[MAX_SKILL_SELECT];
@@ -67,6 +68,7 @@ public class SkillManager : MonoBehaviour
         SkillStat skillStat = skillDB.GetSkill(currentDisplaySkill);
         nameText.text = skillStat.skillName;
         DisplayImage.sprite = skillStat.skillSprite;
+        descriptionText.text = skillStat.skillDescription;
     }
 
     private void StartGame()

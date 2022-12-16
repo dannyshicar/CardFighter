@@ -13,23 +13,113 @@ MonoBehaviour:
   m_Name: New Skill Database
   m_EditorClassIdentifier: 
   skillStats:
-  - skillName: s1
-    skillSprite: {fileID: 21300000, guid: 8842514ba31884f92b03d51e25215fad, type: 3}
-  - skillName: s2
-    skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
-  - skillName: s3
-    skillSprite: {fileID: 21300000, guid: 6882575e575744feda140e8e93adafcd, type: 3}
-  - skillName: s4
-    skillSprite: {fileID: 21300000, guid: 38d2eded25fa44bb2b1c948d4022f6ae, type: 3}
-  - skillName: s5
-    skillSprite: {fileID: 21300000, guid: dc7df6481540a4f1999d22d5ef83286d, type: 3}
-  - skillName: s6
-    skillSprite: {fileID: 21300000, guid: fdb4d5a2b89934f9194087a0ea4099d1, type: 3}
-  - skillName: s7
-    skillSprite: {fileID: 21300000, guid: 4ef9ebb1634054d1f830de6dbfdbcab5, type: 3}
-  - skillName: s8
-    skillSprite: {fileID: 21300000, guid: 577f3ef1b077c49fd875b21bc0df81ea, type: 3}
-  - skillName: s9
-    skillSprite: {fileID: 21300000, guid: ff7fe6c14115b46d4a9251cb34bb6161, type: 3}
-  - skillName: s10
-    skillSprite: {fileID: 21300000, guid: 11fb7949911874d70b051b53537ddbf3, type: 3}
+  - _skillIdx: 0
+    _skillName: s1
+    _skillSprite: {fileID: 21300000, guid: 8842514ba31884f92b03d51e25215fad, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 1
+  - _skillIdx: 0
+    _skillName: s2
+    _skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 2
+  - _skillIdx: 0
+    _skillName: s3
+    _skillSprite: {fileID: 21300000, guid: 6882575e575744feda140e8e93adafcd, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 3
+  - _skillIdx: 0
+    _skillName: s4
+    _skillSprite: {fileID: 21300000, guid: 38d2eded25fa44bb2b1c948d4022f6ae, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 4
+  - _skillIdx: 0
+    _skillName: s5
+    _skillSprite: {fileID: 21300000, guid: dc7df6481540a4f1999d22d5ef83286d, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 5
+  - _skillIdx: 0
+    _skillName: s6
+    _skillSprite: {fileID: 21300000, guid: fdb4d5a2b89934f9194087a0ea4099d1, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 6
+  - _skillIdx: 0
+    _skillName: s7
+    _skillSprite: {fileID: 21300000, guid: 4ef9ebb1634054d1f830de6dbfdbcab5, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 7
+  - _skillIdx: 0
+    _skillName: s8
+    _skillSprite: {fileID: 21300000, guid: 577f3ef1b077c49fd875b21bc0df81ea, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 8
+  - _skillIdx: 0
+    _skillName: s9
+    _skillSprite: {fileID: 21300000, guid: ff7fe6c14115b46d4a9251cb34bb6161, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 9
+  - _skillIdx: 0
+    _skillName: s10
+    _skillSprite: {fileID: 21300000, guid: 11fb7949911874d70b051b53537ddbf3, type: 3}
+    _baseDamage: 0
+    _rangeX: 0
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 0
+    _skillDescription: This is skill number 10
