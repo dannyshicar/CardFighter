@@ -5,6 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class SkillStat
 {
+    public const int MAX_BASE_DAMAGE = 100;
+    public const int MAX_RANGE = 10;
+    public const int MAX_ENERGY_COST = 100;
+    public const int MAX_SUPPORT_SCORE = 100;
     [SerializeField] int _skillIdx;
     [SerializeField] string _skillName;
     [SerializeField] Sprite _skillSprite;
@@ -15,8 +19,10 @@ public class SkillStat
     [SerializeField] float _skillDelay;
     [SerializeField] float _skillDuration;
     [SerializeField] float _energyCost;
+    [SerializeField] int _healing;
+    [SerializeField] int _stunning;
     [SerializeField] string _skillDescription;
-
+    
     public int skillIdx
     {
         get
@@ -105,6 +111,14 @@ public class SkillStat
         }
     }
 
+    public int supportScore
+    {
+        get
+        {
+            return _healing + _stunning;
+        }
+    }
+
     public string skillDescription
     {
         get
@@ -121,6 +135,7 @@ public class SkillStat
             }
         }
     }
+
 
 
 }

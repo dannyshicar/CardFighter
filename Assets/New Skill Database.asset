@@ -16,110 +16,110 @@ MonoBehaviour:
   - _skillIdx: 0
     _skillName: s1
     _skillSprite: {fileID: 21300000, guid: 8842514ba31884f92b03d51e25215fad, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 4
+    _rangeX: 7
+    _rangeY: 7
+    _rangeZ: 7
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 27
     _skillDescription: This is skill number 1
   - _skillIdx: 0
     _skillName: s2
     _skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 72
+    _rangeX: 1
+    _rangeY: 1
+    _rangeZ: 1
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 79
     _skillDescription: This is skill number 2
   - _skillIdx: 0
     _skillName: s3
     _skillSprite: {fileID: 21300000, guid: 6882575e575744feda140e8e93adafcd, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 78
+    _rangeX: 10
+    _rangeY: 10
+    _rangeZ: 10
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 20
     _skillDescription: This is skill number 3
   - _skillIdx: 0
     _skillName: s4
     _skillSprite: {fileID: 21300000, guid: 38d2eded25fa44bb2b1c948d4022f6ae, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 55
+    _rangeX: 1
+    _rangeY: 1
+    _rangeZ: 1
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 47
     _skillDescription: This is skill number 4
   - _skillIdx: 0
     _skillName: s5
     _skillSprite: {fileID: 21300000, guid: dc7df6481540a4f1999d22d5ef83286d, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 52
+    _rangeX: 4
+    _rangeY: 4
+    _rangeZ: 4
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 92
     _skillDescription: This is skill number 5
   - _skillIdx: 0
     _skillName: s6
     _skillSprite: {fileID: 21300000, guid: fdb4d5a2b89934f9194087a0ea4099d1, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 61
+    _rangeX: 9
+    _rangeY: 9
+    _rangeZ: 9
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 93
     _skillDescription: This is skill number 6
   - _skillIdx: 0
     _skillName: s7
     _skillSprite: {fileID: 21300000, guid: 4ef9ebb1634054d1f830de6dbfdbcab5, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 89
+    _rangeX: 9
+    _rangeY: 9
+    _rangeZ: 9
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 93
     _skillDescription: This is skill number 7
   - _skillIdx: 0
     _skillName: s8
     _skillSprite: {fileID: 21300000, guid: 577f3ef1b077c49fd875b21bc0df81ea, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 100
+    _rangeX: 6
+    _rangeY: 6
+    _rangeZ: 6
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 45
     _skillDescription: This is skill number 8
   - _skillIdx: 0
     _skillName: s9
     _skillSprite: {fileID: 21300000, guid: ff7fe6c14115b46d4a9251cb34bb6161, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 15
+    _rangeX: 9
+    _rangeY: 9
+    _rangeZ: 9
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 55
     _skillDescription: This is skill number 9
   - _skillIdx: 0
     _skillName: s10
     _skillSprite: {fileID: 21300000, guid: 11fb7949911874d70b051b53537ddbf3, type: 3}
-    _baseDamage: 0
-    _rangeX: 0
-    _rangeY: 0
-    _rangeZ: 0
+    _baseDamage: 9
+    _rangeX: 7
+    _rangeY: 7
+    _rangeZ: 7
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 0
+    _energyCost: 55
     _skillDescription: This is skill number 10

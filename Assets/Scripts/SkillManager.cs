@@ -11,8 +11,13 @@ public class SkillManager : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI nameText;
     [SerializeField] Image DisplayImage;
     [SerializeField] TMPro.TextMeshProUGUI descriptionText;
+    [SerializeField] Slider displayStatSlider1; // damage
+    [SerializeField] Slider displayStatSlider2; // range
+    [SerializeField] Slider displayStatSlider3; // energy cost
+    [SerializeField] Slider displayStatSlider4; // support
 
     const int MAX_SKILL_SELECT = 5;
+    bool allowMultipleSelect = true;
     int[] selectedSkills = new int[MAX_SKILL_SELECT];
     [SerializeField] Image[] selectedSkillImage = new Image[MAX_SKILL_SELECT];
     int currentSkillSelect = 0;
@@ -20,11 +25,16 @@ public class SkillManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        displayStatSlider1.maxValue = SkillStat.MAX_BASE_DAMAGE;
+        displayStatSlider2.maxValue = SkillStat.MAX_RANGE;
+        displayStatSlider3.maxValue = SkillStat.MAX_ENERGY_COST;
+        displayStatSlider4.maxValue = SkillStat.MAX_SUPPORT_SCORE;
         UpdateSkill();
     }
 
     private bool IsSkillSelected(int skillID)
     {
+        if(allowMultipleSelect) return false;
         for (int i = 0; i < currentSkillSelect; i++)
         {
             if (selectedSkills[i] == skillID)
@@ -46,7 +56,7 @@ public class SkillManager : MonoBehaviour
     {
         do
         {
-            currentDisplaySkill = (currentDisplaySkill - 1) % skillDB.SkillCount;
+            currentDisplaySkill = (currentDisplaySkill - 1 + skillDB.SkillCount) % skillDB.SkillCount;
         } while (IsSkillSelected(currentDisplaySkill));
         UpdateSkill();
     }
@@ -69,6 +79,11 @@ public class SkillManager : MonoBehaviour
         nameText.text = skillStat.skillName;
         DisplayImage.sprite = skillStat.skillSprite;
         descriptionText.text = skillStat.skillDescription;
+
+        displayStatSlider1.value = skillStat.baseDamage;
+        displayStatSlider2.value = skillStat.range;
+        displayStatSlider3.value = skillStat.energyCost;
+        displayStatSlider4.value = skillStat.supportScore;
     }
 
     private void StartGame()
