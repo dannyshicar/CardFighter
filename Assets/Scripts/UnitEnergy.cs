@@ -63,7 +63,14 @@ public class UnitEnergy
     {
         if(_currentEnergy < _currentMaxEnergy && !_pauseEnergyRegen)
         {
-            _currentEnergy += _energyRegenSpeed;
+            if(_currentEnergy + _energyRegenSpeed >= _currentMaxEnergy)
+            {
+                _currentEnergy = _currentMaxEnergy;
+            }
+            else
+            {
+                _currentEnergy += _energyRegenSpeed;
+            }
         }
     }
 }
