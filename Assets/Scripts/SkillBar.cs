@@ -8,6 +8,7 @@ public class SkillBar : MonoBehaviour
     const int MAX_SKILL_NUM = 3;
     [SerializeField] List<Image> skillIcons;
     [SerializeField] List<Image> skillIconPreviews;
+    public SkillDatabase skillDB;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,21 @@ public class SkillBar : MonoBehaviour
         }
     }
 
-    public void SetImage(List<Sprite> skillIconSprites)
+    // public void SetImage(List<Sprite> skillIconSprites)
+    // {
+    //     for(int i = 0; i < MAX_SKILL_NUM; i++)
+    //     {
+    //         skillIcons[i].GetComponent<Image>().sprite = skillIconSprites[i];
+    //         skillIconPreviews[i].GetComponent<Image>().sprite = skillIconSprites[i];
+    //     }
+    // }
+
+    public void SetImage(List<int> skillPool)
     {
         for(int i = 0; i < MAX_SKILL_NUM; i++)
         {
-            skillIcons[i].GetComponent<Image>().sprite = skillIconSprites[i];
-            skillIconPreviews[i].GetComponent<Image>().sprite = skillIconSprites[i];
+            skillIcons[i].GetComponent<Image>().sprite = skillDB.GetSkill(skillPool[i]).skillSprite;
+            skillIconPreviews[i].GetComponent<Image>().sprite = skillDB.GetSkill(skillPool[i]).skillSprite;
         }
     }
 

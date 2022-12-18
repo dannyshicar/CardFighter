@@ -63,6 +63,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     // Skill smallSkill = new Skill("Small", 1, 10, 1.5f, 1.5f, 1.5f, 1.0f, 2.0f, 10f);
 
     public List<int> skillPool = new List<int>(){1, 2, 3};
+    public List<int> currentSkillIndex = new List<int>(){0, 1, 2};
 
 
     bool isCast1Pressed = false;
@@ -103,6 +104,13 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     //Awake is called earlier than Start in Unity's event life cycle
     void Awake(){
         isAI = false;
+        // set skill from skill selection menu
+        skillPool[0] = SkillManager.selectedSkills[currentSkillIndex[0]];
+        skillPool[1] = SkillManager.selectedSkills[currentSkillIndex[1]];
+        skillPool[2] = SkillManager.selectedSkills[currentSkillIndex[2]];
+        _skillBar.SetImage(skillPool);
+
+
         context = new Context();
         //initially set reference variables
         playerInput = new PlayerInput();
@@ -141,7 +149,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         _healthBar.setHealth(playerHealth.Health);
         _energyBar.setMaxEnergy(playerEnergy.MaxEnergy);
         _energyBar.setEnergy(playerEnergy.Energy);
-        _skillBar.SetImage(skillIcons);
+        // _skillBar.SetImage(skillIcons);
         InvokeRepeating("regenEnergy", 0f, 1f);
         if(isAI){
             InvokeRepeating("AIControl", 0f, 1f);
@@ -372,17 +380,20 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
         if(isCast1Pressed){
             isCast1Pressed = false;
             GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[0], playerEnergy.Energy);
+            rotateSkill(0);
             // _handleCastSkillHelper(0);
         }
         if(isCast2Pressed){
             isCast2Pressed = false;
             GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[1], playerEnergy.Energy);
+            rotateSkill(1);
             // _handleCastSkillHelper(1);
         }
         if(isCast3Pressed){
             // isCasting = true;
             isCast3Pressed = false;
             GameObject.Find("PlayerASkill").GetComponent<PlayerASkill>().Cast(skillPool[2], playerEnergy.Energy);
+            rotateSkill(2);
             // _handleCastSkillHelper(2);
         }
         // if(isCasting){
@@ -421,6 +432,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _skillBar.SetImage(skillPool);
         updateSkillIconCooldown();
         //get mouse position
         // screenPosition = Input.mousePosition;
@@ -483,6 +495,31 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     {
         playerEnergy.regenEnergy();
         _energyBar.setEnergy(playerEnergy.Energy);
+    }
+
+    private void rotateSkill(int usedSkillIdx) // should call this function after the player cast a skill
+    {
+        // pick one skill from SkillManager.selectedSkills and replace the used skill
+        List<int> candidateSkills = new List<int>();
+        for(int i = 0; i < SkillManager.selectedSkills.Length; i++)
+        {
+            bool used = false;
+            for(int j = 0; j < currentSkillIndex.Count; j++)
+            {
+                if(i == currentSkillIndex[j])
+                {
+                    used = true;
+                    break;
+                }
+            }
+            if(!used)
+            {
+                candidateSkills.Add(i);
+            }
+        }
+        int newSkillIdx = candidateSkills[Random.Range(0, candidateSkills.Count)];
+        currentSkillIndex[usedSkillIdx] = newSkillIdx;
+        skillPool[usedSkillIdx] = SkillManager.selectedSkills[newSkillIdx];
     }
 
 }

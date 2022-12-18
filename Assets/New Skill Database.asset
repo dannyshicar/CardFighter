@@ -26,6 +26,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: Throw a bomb at mouse position.
+    _is_available: 1
   - _skillIdx: 0
     _skillName: brick
     _skillSprite: {fileID: 21300000, guid: 3d8f259a0caa9464cae897a2bf334aa0, type: 3}
@@ -39,6 +40,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: Drop a brick at enemy.
+    _is_available: 1
   - _skillIdx: 0
     _skillName: lightning
     _skillSprite: {fileID: 21300000, guid: a767041e438e54bca8717d76aad86127, type: 3}
@@ -52,6 +54,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: Shoots a lightning at enemy
+    _is_available: 1
   - _skillIdx: 0
     _skillName: s4
     _skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
@@ -65,6 +68,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 1
   - _skillIdx: 0
     _skillName: s5
     _skillSprite: {fileID: 21300000, guid: 4814d9ab7071646478add19be86b742a, type: 3}
@@ -78,6 +82,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 1
   - _skillIdx: 0
     _skillName: s6
     _skillSprite: {fileID: 21300000, guid: 48249839c2a4041c7a1e1fb87a1896ba, type: 3}
@@ -91,6 +96,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 0
   - _skillIdx: 0
     _skillName: s7
     _skillSprite: {fileID: 21300000, guid: 64b3a154f9d544dfab1ebd33b9467ac3, type: 3}
@@ -104,6 +110,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 0
   - _skillIdx: 0
     _skillName: s8
     _skillSprite: {fileID: 21300000, guid: 8842514ba31884f92b03d51e25215fad, type: 3}
@@ -117,6 +124,7 @@ MonoBehaviour:
     _healing: 5
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 0
   - _skillIdx: 0
     _skillName: s9
     _skillSprite: {fileID: 21300000, guid: 48249839c2a4041c7a1e1fb87a1896ba, type: 3}
@@ -130,6 +138,7 @@ MonoBehaviour:
     _healing: 0
     _stunning: 4
     _skillDescription: tbd
+    _is_available: 0
   - _skillIdx: 0
     _skillName: s10
     _skillSprite: {fileID: 21300000, guid: c58e1902dd844455195d31ee8f2b3802, type: 3}
@@ -143,3 +152,4 @@ MonoBehaviour:
     _healing: 0
     _stunning: 0
     _skillDescription: tbd
+    _is_available: 0

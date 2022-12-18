@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,7 +19,7 @@ public class SkillManager : MonoBehaviour
 
     const int MAX_SKILL_SELECT = 5;
     bool allowMultipleSelect = true;
-    int[] selectedSkills = new int[MAX_SKILL_SELECT];
+    public static int[] selectedSkills = new int[MAX_SKILL_SELECT];
     [SerializeField] Image[] selectedSkillImage = new Image[MAX_SKILL_SELECT];
     int currentSkillSelect = 0;
     int currentDisplaySkill = 0;
@@ -49,7 +50,7 @@ public class SkillManager : MonoBehaviour
         do
         {
             currentDisplaySkill = (currentDisplaySkill + 1) % skillDB.SkillCount;
-        } while (IsSkillSelected(currentDisplaySkill));
+        } while (IsSkillSelected(currentDisplaySkill) || skillDB.GetSkill(currentDisplaySkill).is_available != 1);
         UpdateSkill();
     }
     public void BackOption()
@@ -57,7 +58,7 @@ public class SkillManager : MonoBehaviour
         do
         {
             currentDisplaySkill = (currentDisplaySkill - 1 + skillDB.SkillCount) % skillDB.SkillCount;
-        } while (IsSkillSelected(currentDisplaySkill));
+        } while (IsSkillSelected(currentDisplaySkill) || skillDB.GetSkill(currentDisplaySkill).is_available != 1);
         UpdateSkill();
     }
     public void SelectOption()
@@ -88,7 +89,9 @@ public class SkillManager : MonoBehaviour
 
     private void StartGame()
     {
-        Debug.Log("Starting Game");
+        // Debug.Log("Starting Game");
+        // load next scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

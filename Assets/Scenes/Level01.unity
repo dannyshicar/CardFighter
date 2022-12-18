@@ -5029,6 +5029,7 @@ MonoBehaviour:
   - {fileID: 1507844479}
   - {fileID: 1573741946}
   - {fileID: 1493942941}
+  skillDB: {fileID: 11400000, guid: 6ebe2d42924224bf8bb4a02c4f20e852, type: 2}
 --- !u!1 &969495939
 GameObject:
   m_ObjectHideFlags: 0
@@ -5599,6 +5600,7 @@ MonoBehaviour:
   - {fileID: 1258978333}
   - {fileID: 1410886882}
   - {fileID: 208965203}
+  skillDB: {fileID: 0}
 --- !u!1 &1119675740
 GameObject:
   m_ObjectHideFlags: 0

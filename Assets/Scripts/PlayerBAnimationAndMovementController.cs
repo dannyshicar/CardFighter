@@ -125,7 +125,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
         _healthBar.setHealth(playerHealth.Health);
         _energyBar.setMaxEnergy(playerEnergy.MaxEnergy);
         _energyBar.setEnergy(playerEnergy.Energy);
-        _skillBar.SetImage(skillIcons);
+        // _skillBar.SetImage(skillIcons);
         InvokeRepeating("regenEnergy", 0f, 1f);
         if(isAI){
             InvokeRepeating("AIControl", 0f, 1f);

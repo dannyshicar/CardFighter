@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: bd8b95ca472c3459cacd9df0bc6378d4
   - enabled: 1
+    path: Assets/Scenes/SkillSelectionMenu.unity
+    guid: 8637d6e6b03d24454b6486dfb8cc3ae7
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: 2eb31af91874a41a89a2ea0fadf52365
   - enabled: 0

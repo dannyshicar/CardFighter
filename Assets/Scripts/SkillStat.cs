@@ -22,6 +22,7 @@ public class SkillStat
     [SerializeField] int _healing;
     [SerializeField] int _stunning;
     [SerializeField] string _skillDescription;
+    [SerializeField] int _is_available;
     
     public int skillIdx
     {
@@ -117,6 +118,14 @@ public class SkillStat
         get
         {
             return _healing + _stunning;
+        }
+    }
+
+    public int is_available
+    {
+        get
+        {
+            return _is_available;
         }
     }
 
