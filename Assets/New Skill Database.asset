@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef4962aa82354eceb2966fbe88739ed, type: 3}
+  m_Name: New Skill Database
+  m_EditorClassIdentifier: 
+  skillStats:
+  - _skillIdx: 0
+    _skillName: bomb
+    _skillSprite: {fileID: 21300000, guid: 6882575e575744feda140e8e93adafcd, type: 3}
+    _baseDamage: 20
+    _rangeX: 3
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 30
+    _healing: 0
+    _stunning: 0
+    _skillDescription: Throw a bomb at mouse position.
+  - _skillIdx: 0
+    _skillName: brick
+    _skillSprite: {fileID: 21300000, guid: 3d8f259a0caa9464cae897a2bf334aa0, type: 3}
+    _baseDamage: 40
+    _rangeX: 2
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 15
+    _healing: 0
+    _stunning: 0
+    _skillDescription: Drop a brick at enemy.
+  - _skillIdx: 0
+    _skillName: lightning
+    _skillSprite: {fileID: 21300000, guid: a767041e438e54bca8717d76aad86127, type: 3}
+    _baseDamage: 25
+    _rangeX: 7
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 50
+    _healing: 0
+    _stunning: 0
+    _skillDescription: Shoots a lightning at enemy
+  - _skillIdx: 0
+    _skillName: s4
+    _skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
+    _baseDamage: 20
+    _rangeX: 3
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 15
+    _healing: 0
+    _stunning: 0
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s5
+    _skillSprite: {fileID: 21300000, guid: 4814d9ab7071646478add19be86b742a, type: 3}
+    _baseDamage: 35
+    _rangeX: 3
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 25
+    _healing: 0
+    _stunning: 0
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s6
+    _skillSprite: {fileID: 21300000, guid: 48249839c2a4041c7a1e1fb87a1896ba, type: 3}
+    _baseDamage: 10
+    _rangeX: 1
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 30
+    _healing: 0
+    _stunning: 0
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s7
+    _skillSprite: {fileID: 21300000, guid: 64b3a154f9d544dfab1ebd33b9467ac3, type: 3}
+    _baseDamage: 55
+    _rangeX: 2
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 30
+    _healing: 0
+    _stunning: 0
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s8
+    _skillSprite: {fileID: 21300000, guid: 8842514ba31884f92b03d51e25215fad, type: 3}
+    _baseDamage: 45
+    _rangeX: 6
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 8
+    _healing: 5
+    _stunning: 0
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s9
+    _skillSprite: {fileID: 21300000, guid: 48249839c2a4041c7a1e1fb87a1896ba, type: 3}
+    _baseDamage: 35
+    _rangeX: 8
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 20
+    _healing: 0
+    _stunning: 4
+    _skillDescription: tbd
+  - _skillIdx: 0
+    _skillName: s10
+    _skillSprite: {fileID: 21300000, guid: c58e1902dd844455195d31ee8f2b3802, type: 3}
+    _baseDamage: 80
+    _rangeX: 2
+    _rangeY: 0
+    _rangeZ: 0
+    _skillDelay: 0
+    _skillDuration: 0
+    _energyCost: 60
+    _healing: 0
+    _stunning: 0
+    _skillDescription: tbd
