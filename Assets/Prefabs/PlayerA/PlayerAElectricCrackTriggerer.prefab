@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8224112619993972713}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -146,3 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783d6aa90304f477a9f095a33e245e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electricCrackPrefab: {fileID: 100008, guid: 9b0204e138ba442debd889f5a3ab5346, type: 3}
+  electricCrackColliderPrefab: {fileID: 781033234800389436, guid: 0c5c381d3c2a44f56a3bbc41c2880b85, type: 3}
+  electricCrackTriggererPrefab: {fileID: 8224112619993972713}
+  cnt: 0
+  mapLayer: 6

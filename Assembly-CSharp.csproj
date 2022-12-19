@@ -47,7 +47,9 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
      <Compile Include="Assets/Scripts/PlayerBIce.cs" />
      <Compile Include="Assets/Scripts/PlayerBThrowBomb.cs" />
+     <Compile Include="Assets/Scripts/SkillManager.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
+     <Compile Include="Assets/Scripts/SkillDatabase.cs" />
      <Compile Include="Assets/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets/Scripts/PlayerALightningCollider.cs" />
      <Compile Include="Assets/52SpecialEffectPack/Animation&amp;Script/csShowAllEffect.cs" />
+     <Compile Include="Assets/PlayerAElectricCrack.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
      <Compile Include="Assets/Animation/PlayerInput.cs" />
      <Compile Include="Assets/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightFlicker.cs" />
@@ -130,6 +133,7 @@
      <Compile Include="Assets/EffectExamples/Shared/Scripts/ParticleCollision.cs" />
      <Compile Include="Assets/Scripts/UnitEnergy.cs" />
      <Compile Include="Assets/Scripts/PlayerBBomb.cs" />
+     <Compile Include="Assets/Scripts/SkillStat.cs" />
      <Compile Include="Assets/Scripts/PlayerAAnimationAndMovementController.cs" />
      <Compile Include="Assets/Scripts/SmallSkill.cs" />
      <Compile Include="Assets/Scripts/PlayerALightningLaser.cs" />
@@ -145,6 +149,7 @@
      <Compile Include="Assets/Scripts/CountdownController.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets/PlayerAElectricCrackCollider.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/JMO Assets/Cartoon FX (legacy)/Shaders/CFX3 Multiply Color.shader" />

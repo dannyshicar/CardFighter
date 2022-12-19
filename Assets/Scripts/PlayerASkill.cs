@@ -32,11 +32,11 @@ public class PlayerASkill : MonoBehaviour
     const int healEnergyCost = 10;
     const float healDuration = 0f;
 
-    // electric crack
-    const int electricCrackDamage = 5;
-    const float electricCrackDelay = 0.3f;
-    const int electricCrackEnergyCost = 30;
-    const float electricCrackDuration = 0f;
+    // // electric crack
+    // const int electricCrackDamage = 5;
+    // const float electricCrackDelay = 0.3f;
+    // const int electricCrackEnergyCost = 30;
+    // const float electricCrackDuration = 0f;
 
     // holy light
     const int holyLightDamage = 10;
@@ -56,7 +56,7 @@ public class PlayerASkill : MonoBehaviour
         new SkillTemplate("DropIce", dropIceDamage, dropIceDelay, dropIceDuration, dropIceEnergyCost),
         new SkillTemplate("LightningLaser", lightningLaserDamage, lightningLaserDelay, lightningLaserDuration, lightningLaserEnergyCost),
         new SkillTemplate("Heal", healAmount, healDelay, healDuration, healEnergyCost),
-        new SkillTemplate("ElectricCrack", electricCrackDamage, electricCrackDelay, electricCrackDuration, electricCrackEnergyCost),
+        // new SkillTemplate("ElectricCrack", electricCrackDamage, electricCrackDelay, electricCrackDuration, electricCrackEnergyCost),
         new SkillTemplate("HolyLight", holyLightDamage, holyLightDelay, holyLightDuration, holyLightEnergyCost)
     };
 
@@ -128,13 +128,15 @@ public class PlayerASkill : MonoBehaviour
 
         }
         else if(skillIdx == 4){
-
-        }
-        else if(skillIdx == 5){
             skillPos = mousePos;
             skillPrefab = skillPrefabs[skillIdx];
             skillObj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
         }
+        // else if(skillIdx == 5){
+        //     skillPos = mousePos;
+        //     skillPrefab = skillPrefabs[skillIdx];
+        //     skillObj = Instantiate(skillPrefab, skillPos, skillPrefab.transform.rotation);
+        // }
         // else if(skillIdx == 6){
         //     skillPos = playerPosition;
         //     // skillPos.y += 1f;

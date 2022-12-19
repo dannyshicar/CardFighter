@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd98d531158f49bb98c17062217318c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holyLightPrefab: {fileID: 100000, guid: 8d692a129c0874c2981503fd1b55bb03, type: 3}
+  holyLightPrefab: {fileID: 100000, guid: 8e2795d9a95404323b5ead5a2655113e, type: 3}
   holyLightColliderPrefab: {fileID: 781033234800389436, guid: 06c765e186146499a8742515e6293033, type: 3}
   mapLayer: 6

@@ -15,7 +15,7 @@ MonoBehaviour:
   skillStats:
   - _skillIdx: 0
     _skillName: bomb
-    _skillSprite: {fileID: 21300000, guid: 6882575e575744feda140e8e93adafcd, type: 3}
+    _skillSprite: {fileID: 21300000, guid: 9ee86d5949e7e4e689f0cff7f436ab50, type: 3}
     _baseDamage: 20
     _rangeX: 3
     _rangeY: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     _is_available: 1
   - _skillIdx: 0
     _skillName: brick
-    _skillSprite: {fileID: 21300000, guid: 3d8f259a0caa9464cae897a2bf334aa0, type: 3}
+    _skillSprite: {fileID: 21300000, guid: a4ac1ffaddfcd481382cb45af3d6fedf, type: 3}
     _baseDamage: 40
     _rangeX: 2
     _rangeY: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     _is_available: 1
   - _skillIdx: 0
     _skillName: lightning
-    _skillSprite: {fileID: 21300000, guid: a767041e438e54bca8717d76aad86127, type: 3}
+    _skillSprite: {fileID: 21300000, guid: 27909a31b162f4c799ac4570133457e3, type: 3}
     _baseDamage: 25
     _rangeX: 7
     _rangeY: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     _is_available: 1
   - _skillIdx: 0
     _skillName: s4
-    _skillSprite: {fileID: 21300000, guid: c4758b9abf9a24bd8a5ac1a70064f57c, type: 3}
+    _skillSprite: {fileID: 21300000, guid: b1183daa802784a3eb418f2045156083, type: 3}
     _baseDamage: 20
     _rangeX: 3
     _rangeY: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
     _is_available: 1
   - _skillIdx: 0
     _skillName: s5
-    _skillSprite: {fileID: 21300000, guid: 4814d9ab7071646478add19be86b742a, type: 3}
+    _skillSprite: {fileID: 21300000, guid: 17c2b20cfd27f495aa27ce910059deba, type: 3}
     _baseDamage: 35
     _rangeX: 3
     _rangeY: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
     _is_available: 1
   - _skillIdx: 0
     _skillName: s6
-    _skillSprite: {fileID: 21300000, guid: 48249839c2a4041c7a1e1fb87a1896ba, type: 3}
+    _skillSprite: {fileID: 21300000, guid: 64b3a154f9d544dfab1ebd33b9467ac3, type: 3}
     _baseDamage: 10
     _rangeX: 1
     _rangeY: 0
