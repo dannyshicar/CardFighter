@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static int bossHP = 100;
 
     bool gameHasEnded = false;
+    public static bool gameHasStarted = false;
 
     public float restartDelay = 1f;
 
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void BeginGame(){
         Time.timeScale = 1f;
+        gameHasStarted = true;
     }
     
     public void EndGame(){

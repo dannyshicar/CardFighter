@@ -31,9 +31,10 @@ public class CountdownController : MonoBehaviour
         countdownDisplay.text = "Start!";
         yield return new WaitForSecondsRealtime(1f);
 		
-		GameManager.Instance.BeginGame();
+		
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
+        GameManager.Instance.BeginGame();
 
         countdownDisplay.gameObject.SetActive(false);
     }
