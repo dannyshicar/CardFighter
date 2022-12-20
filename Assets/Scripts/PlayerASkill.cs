@@ -9,25 +9,25 @@ public class PlayerASkill : MonoBehaviour
     public Context context;
 
     // throwBomb
-    const int throwBombDamage = 10;
+    const int throwBombDamage = 20;
     const float throwBombDelay = 0f;
-    const int throwBombEnergyCost = 10;
+    const int throwBombEnergyCost = 30;
     const float throwBombDuration = 0f;
 
     // dropIce
-    const int dropIceDamage = 20;
+    const int dropIceDamage = 40;
     const float dropIceDelay = 1f;
     const int dropIceEnergyCost = 10;
     const float dropIceDuration = 0f;
     
     // lightiningLaser
-    const int lightningLaserDamage = 5;
+    const int lightningLaserDamage = 15;
     const float lightningLaserDelay = 0f;
-    const int lightningLaserEnergyCost = 10;
+    const int lightningLaserEnergyCost = 15;
     const float lightningLaserDuration = 0f;
     
     // heal
-    const int healAmount = 10;
+    const int healAmount = 30;
     const float healDelay = 0f;
     const int healEnergyCost = 10;
     const float healDuration = 0f;
@@ -39,9 +39,9 @@ public class PlayerASkill : MonoBehaviour
     // const float electricCrackDuration = 0f;
 
     // holy light
-    const int holyLightDamage = 10;
+    const int holyLightDamage = 60;
     const float holyLightDelay = 0.5f;
-    const int holyLightEnergyCost = 10;
+    const int holyLightEnergyCost = 30;
     const float holyLightDuration = 0f;
 
     // // teleport

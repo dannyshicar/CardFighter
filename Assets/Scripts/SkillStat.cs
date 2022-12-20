@@ -133,7 +133,7 @@ public class SkillStat
     {
         get
         {
-            const int MAX_LENGTH = 100;
+            const int MAX_LENGTH = 200;
             string padding = "    ";
             if(_skillDescription.Length > MAX_LENGTH - (3 + padding.Length))
             {

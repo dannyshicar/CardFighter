@@ -92,7 +92,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     // public int maxHealth = 100;
     // public int currentHealth;
     private UnitHealth playerHealth = new UnitHealth(100, 100);
-    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 50f);
+    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 5f);
     // public PlayerHealthBar healthBar;
     [SerializeField] HealthBar _healthBar;
     [SerializeField] EnergyBar _energyBar;

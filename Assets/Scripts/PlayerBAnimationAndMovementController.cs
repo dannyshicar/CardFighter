@@ -85,7 +85,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
     // public int maxHealth = 100;
     // public int currentHealth;
     private UnitHealth playerHealth = new UnitHealth(GameManager.bossHP, GameManager.bossHP);
-    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 5f);
+    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 10f);
     // public PlayerHealthBar healthBar;
     [SerializeField] HealthBar _healthBar;
     [SerializeField] EnergyBar _energyBar;
