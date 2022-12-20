@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillStats:
   - _skillIdx: 0
-    _skillName: bomb
+    _skillName: Bomb
     _skillSprite: {fileID: 21300000, guid: 9ee86d5949e7e4e689f0cff7f436ab50, type: 3}
     _baseDamage: 20
     _rangeX: 3
@@ -25,10 +25,10 @@ MonoBehaviour:
     _energyCost: 30
     _healing: 0
     _stunning: 0
-    _skillDescription: Throw a bomb at mouse position.
+    _skillDescription: Throw an explosive bomb at your desired position.
     _is_available: 1
   - _skillIdx: 0
-    _skillName: brick
+    _skillName: Ice
     _skillSprite: {fileID: 21300000, guid: a4ac1ffaddfcd481382cb45af3d6fedf, type: 3}
     _baseDamage: 40
     _rangeX: 2
@@ -36,27 +36,28 @@ MonoBehaviour:
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 15
+    _energyCost: 10
     _healing: 0
     _stunning: 0
-    _skillDescription: Drop a brick at enemy.
+    _skillDescription: Drop a ice brick that deals huge areal damage. There is a
+      1 second delay before dropping the skill.
     _is_available: 1
   - _skillIdx: 0
-    _skillName: lightning
+    _skillName: Lightning Laser
     _skillSprite: {fileID: 21300000, guid: 27909a31b162f4c799ac4570133457e3, type: 3}
-    _baseDamage: 25
+    _baseDamage: 15
     _rangeX: 7
     _rangeY: 0
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 50
+    _energyCost: 15
     _healing: 0
     _stunning: 0
     _skillDescription: Shoots a lightning at enemy
     _is_available: 1
   - _skillIdx: 0
-    _skillName: s4
+    _skillName: Healing
     _skillSprite: {fileID: 21300000, guid: b1183daa802784a3eb418f2045156083, type: 3}
     _baseDamage: 20
     _rangeX: 3
@@ -65,23 +66,23 @@ MonoBehaviour:
     _skillDelay: 0
     _skillDuration: 0
     _energyCost: 15
-    _healing: 0
+    _healing: 30
     _stunning: 0
-    _skillDescription: tbd
+    _skillDescription: Heal yourself for 20 hp.
     _is_available: 1
   - _skillIdx: 0
-    _skillName: s5
+    _skillName: Holy Light
     _skillSprite: {fileID: 21300000, guid: 17c2b20cfd27f495aa27ce910059deba, type: 3}
-    _baseDamage: 35
+    _baseDamage: 60
     _rangeX: 3
     _rangeY: 0
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 25
+    _energyCost: 30
     _healing: 0
     _stunning: 0
-    _skillDescription: tbd
+    _skillDescription: summon a holy ground at the ground. It deals massive damage.
     _is_available: 1
   - _skillIdx: 0
     _skillName: s6

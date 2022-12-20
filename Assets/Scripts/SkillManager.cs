@@ -16,9 +16,11 @@ public class SkillManager : MonoBehaviour
     [SerializeField] Slider displayStatSlider2; // range
     [SerializeField] Slider displayStatSlider3; // energy cost
     [SerializeField] Slider displayStatSlider4; // support
+    [SerializeField] TMPro.TextMeshProUGUI countRemainSkillSelection;
 
     const int MAX_SKILL_SELECT = 5;
-    bool allowMultipleSelect = true;
+    bool allowMultipleSelect = false;
+    int max_selection_per_skill = 2;
     public static int[] selectedSkills = new int[MAX_SKILL_SELECT];
     [SerializeField] Image[] selectedSkillImage = new Image[MAX_SKILL_SELECT];
     int currentSkillSelect = 0;
@@ -33,14 +35,29 @@ public class SkillManager : MonoBehaviour
         UpdateSkill();
     }
 
-    private bool IsSkillSelected(int skillID)
+    private int getSkillCount(int skillID)
     {
-        if(allowMultipleSelect) return false;
+        int count = 0;
         for (int i = 0; i < currentSkillSelect; i++)
         {
             if (selectedSkills[i] == skillID)
             {
-                return true;
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private bool IsSkillSelected(int skillID)
+    {
+        if(allowMultipleSelect) return false;
+        int count = 0;
+        for (int i = 0; i < currentSkillSelect; i++)
+        {
+            if (selectedSkills[i] == skillID)
+            {
+                count++;
+                if (count >= max_selection_per_skill) return true;
             }
         }
         return false;
@@ -85,6 +102,7 @@ public class SkillManager : MonoBehaviour
         displayStatSlider2.value = skillStat.range;
         displayStatSlider3.value = skillStat.energyCost;
         displayStatSlider4.value = skillStat.supportScore;
+        countRemainSkillSelection.text = (max_selection_per_skill - getSkillCount(currentDisplaySkill)).ToString();
     }
 
     private void StartGame()
