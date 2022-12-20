@@ -432,6 +432,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GameManager.gameHasStarted) return;
         _skillBar.SetImage(skillPool);
         updateSkillIconCooldown();
         //get mouse position

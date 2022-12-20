@@ -396,7 +396,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
 
     void AIControl()
     {
-        if(Time.timeScale == 0) return; // don't control when game is paused
+        if(Time.timeScale == 0 || !GameManager.gameHasStarted) return; // don't control when game is paused
         // control movement
         float speed = walkSpeed;
         int direction;
@@ -444,6 +444,7 @@ public class PlayerBAnimationAndMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GameManager.gameHasStarted) return;
         updateSkillIconCooldown();
         //get mouse position
         screenPosition = Input.mousePosition;

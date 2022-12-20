@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         GameRoundCountText.text = round.ToString();
         Time.timeScale = 0f;
+        gameHasStarted = false;
+        gameHasEnded = false;
     }
 
     void OnDestroy()
