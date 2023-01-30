@@ -39,7 +39,7 @@ public class PlayerALightningCollider : MonoBehaviour
             else hitTarget = true;
             Debug.Log("lightning hit");
             playerB = GameObject.Find("PlayerB");
-            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(10);
+            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(15);
             // collision.gameObject.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(10);
             kill();
 

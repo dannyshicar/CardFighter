@@ -8,7 +8,6 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
 {
     public bool isAI; // if this is true, then the player is controlled by AI
     public GameObject target; // PlayerB
-    public Transform apple;
 
     public Context context;
     
@@ -92,7 +91,7 @@ public class PlayerAAnimationAndMovementController : MonoBehaviour
     // public int maxHealth = 100;
     // public int currentHealth;
     private UnitHealth playerHealth = new UnitHealth(100, 100);
-    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 5f);
+    private UnitEnergy playerEnergy = new UnitEnergy(0f, 100f, 7f);
     // public PlayerHealthBar healthBar;
     [SerializeField] HealthBar _healthBar;
     [SerializeField] EnergyBar _energyBar;

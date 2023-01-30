@@ -28,7 +28,7 @@ public class PlayerAIce : MonoBehaviour
             this.gameObject.SetActive(false);
             explode = Instantiate(explodePrefabs, transform.position, explodePrefabs.transform.rotation);
             playerB = GameObject.Find("PlayerB");
-            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(10);
+            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(40);
             Destroy(explode, 2);
             Destroy(this.gameObject, 2);
         }

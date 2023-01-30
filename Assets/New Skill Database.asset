@@ -25,7 +25,7 @@ MonoBehaviour:
     _energyCost: 30
     _healing: 0
     _stunning: 0
-    _skillDescription: Throw an explosive bomb at your desired position.
+    _skillDescription: Throw an explosive bomb at your mouse position.
     _is_available: 1
   - _skillIdx: 0
     _skillName: Ice
@@ -36,11 +36,11 @@ MonoBehaviour:
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 10
+    _energyCost: 15
     _healing: 0
     _stunning: 0
-    _skillDescription: Drop a ice brick that deals huge areal damage. There is a
-      1 second delay before dropping the skill.
+    _skillDescription: Drop a ice brick that deals huge damage. There is a 1 second
+      delay before ice drop.
     _is_available: 1
   - _skillIdx: 0
     _skillName: Lightning Laser
@@ -51,38 +51,40 @@ MonoBehaviour:
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 15
+    _energyCost: 20
     _healing: 0
     _stunning: 0
-    _skillDescription: Shoots a lightning at enemy
+    _skillDescription: Shoots a lightning laser to  enemy with 1 sec delay.
     _is_available: 1
   - _skillIdx: 0
     _skillName: Healing
     _skillSprite: {fileID: 21300000, guid: b1183daa802784a3eb418f2045156083, type: 3}
-    _baseDamage: 20
-    _rangeX: 3
+    _baseDamage: 0
+    _rangeX: 0
     _rangeY: 0
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
     _energyCost: 15
-    _healing: 30
+    _healing: 10
     _stunning: 0
-    _skillDescription: Heal yourself for 20 hp.
+    _skillDescription: Heal 10 hp.
     _is_available: 1
   - _skillIdx: 0
     _skillName: Holy Light
     _skillSprite: {fileID: 21300000, guid: 17c2b20cfd27f495aa27ce910059deba, type: 3}
-    _baseDamage: 60
+    _baseDamage: 40
     _rangeX: 3
     _rangeY: 0
     _rangeZ: 0
     _skillDelay: 0
     _skillDuration: 0
-    _energyCost: 30
+    _energyCost: 40
     _healing: 0
     _stunning: 0
-    _skillDescription: summon a holy ground at the ground. It deals massive damage.
+    _skillDescription: 'summon a holy light at the ground below the mouse position
+      with at least 1 sec delay. Hint: If your mouse closer to ground, it would emit
+      faster.'
     _is_available: 1
   - _skillIdx: 0
     _skillName: s6

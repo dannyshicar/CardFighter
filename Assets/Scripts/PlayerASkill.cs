@@ -9,28 +9,28 @@ public class PlayerASkill : MonoBehaviour
     public Context context;
 
     // throwBomb
-    const int throwBombDamage = 20;
-    const float throwBombDelay = 0f;
-    const int throwBombEnergyCost = 30;
-    const float throwBombDuration = 0f;
+    public const int throwBombDamage = 20;
+    public const float throwBombDelay = 0f;
+    public const int throwBombEnergyCost = 30;
+    public const float throwBombDuration = 0f;
 
     // dropIce
-    const int dropIceDamage = 40;
-    const float dropIceDelay = 1f;
-    const int dropIceEnergyCost = 10;
-    const float dropIceDuration = 0f;
+    public const int dropIceDamage = 40;
+    public const float dropIceDelay = 1f;
+    public const int dropIceEnergyCost = 15;
+    public const float dropIceDuration = 0f;
     
     // lightiningLaser
-    const int lightningLaserDamage = 15;
-    const float lightningLaserDelay = 0f;
-    const int lightningLaserEnergyCost = 15;
-    const float lightningLaserDuration = 0f;
+    public const int lightningLaserDamage = 15;
+    public const float lightningLaserDelay = 0f;
+    public const int lightningLaserEnergyCost = 20;
+    public const float lightningLaserDuration = 0f;
     
     // heal
-    const int healAmount = 30;
-    const float healDelay = 0f;
-    const int healEnergyCost = 10;
-    const float healDuration = 0f;
+    public const int healAmount = 20;
+    public const float healDelay = 0f;
+    public const int healEnergyCost = 10;
+    public const float healDuration = 0f;
 
     // // electric crack
     // const int electricCrackDamage = 5;
@@ -39,10 +39,10 @@ public class PlayerASkill : MonoBehaviour
     // const float electricCrackDuration = 0f;
 
     // holy light
-    const int holyLightDamage = 60;
-    const float holyLightDelay = 0.5f;
-    const int holyLightEnergyCost = 30;
-    const float holyLightDuration = 0f;
+    public const int holyLightDamage = 40;
+    public const float holyLightDelay = 0.5f;
+    public const int holyLightEnergyCost = 40;
+    public const float holyLightDuration = 0f;
 
     // // teleport
     // const int teleportDamage = 0;

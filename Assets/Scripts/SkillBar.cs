@@ -31,7 +31,7 @@ public class SkillBar : MonoBehaviour
     {
         for(int i = 0; i < MAX_SKILL_NUM; i++)
         {
-            skillIcons[i].GetComponent<Image>().sprite = skillDB.GetSkill(skillPool[i]).skillSprite;
+            // skillIcons[i].GetComponent<Image>().sprite = skillDB.GetSkill(skillPool[i]).skillSprite;
             skillIconPreviews[i].GetComponent<Image>().sprite = skillDB.GetSkill(skillPool[i]).skillSprite;
         }
     }
@@ -40,11 +40,11 @@ public class SkillBar : MonoBehaviour
     {
         if(playerEnergy >= skillEnergyCost)
         {
-            skillIcons[skillIdx].fillAmount = 1;
+            skillIcons[skillIdx].fillAmount = 0;
         }
         else
         {
-            skillIcons[skillIdx].fillAmount = playerEnergy / skillEnergyCost;
+            skillIcons[skillIdx].fillAmount = 1 - playerEnergy / skillEnergyCost;
         }
     }
 }

@@ -10,6 +10,9 @@ public class PlayerAHolyLightTriggerer : MonoBehaviour
 
     public GameObject holyLightPrefab;
     public GameObject holyLightColliderPrefab;
+    GameObject holyLight;
+    GameObject holyLight2;
+    GameObject holyLightCollider;
 
     public int mapLayer = 6;
     // Start is called before the first frame update
@@ -21,8 +24,7 @@ public class PlayerAHolyLightTriggerer : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        GameObject holyLight;
-        GameObject holyLightCollider;
+        
 
         
         
@@ -32,13 +34,8 @@ public class PlayerAHolyLightTriggerer : MonoBehaviour
             else hitTarget = true;
 
             this.gameObject.SetActive(false);
-            holyLight = Instantiate(holyLightPrefab, transform.position, holyLightPrefab.transform.rotation);
-            Destroy(holyLight, 2);
-            Destroy(this.gameObject, 2);
-            Vector3 colliderPos = transform.position;
-            colliderPos.y += holyLightColliderPrefab.GetComponent<Transform>().localScale.y / 2;
-            holyLightCollider = Instantiate(holyLightColliderPrefab, colliderPos, holyLightColliderPrefab.transform.rotation);
-            Destroy(holyLightCollider, 2);
+            Invoke("Cast", 1f);
+            
         }
 
 
@@ -47,5 +44,16 @@ public class PlayerAHolyLightTriggerer : MonoBehaviour
     void Update()
     {
         
+    }
+    void Cast(){
+        holyLight = Instantiate(holyLightPrefab, transform.position, holyLightPrefab.transform.rotation);
+        Destroy(holyLight, 2);
+        holyLight2 = Instantiate(holyLightPrefab, transform.position, holyLightPrefab.transform.rotation);
+        Destroy(holyLight2, 2);
+        Destroy(this.gameObject, 2);
+        Vector3 colliderPos = transform.position;
+        colliderPos.y += holyLightColliderPrefab.GetComponent<Transform>().localScale.y / 2;
+        holyLightCollider = Instantiate(holyLightColliderPrefab, colliderPos, holyLightColliderPrefab.transform.rotation);
+        Destroy(holyLightCollider, 2);
     }
 }

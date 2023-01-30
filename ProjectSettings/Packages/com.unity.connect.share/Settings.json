@@ -4,7 +4,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/dannyshicar/Documents/GitHub/card_fighter_app/fifth/fifth;/Users/dannyshicar/Documents/GitHub/card_fighter_app/forth/forth;/Users/wangfengyi/Desktop/game/card_fighter/build/v5;/Users/dannyshicar/Documents/GitHub/card_fighter_app/third;/Users/dannyshicar/Documents/GitHub/card_fighter_app/second;/Users/dannyshicar/Documents/GitHub/card_fighter/first;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/dannyshicar/Documents/GitHub/card_fighter_app/ninth/FinalDemo;/Users/dannyshicar/Documents/GitHub/card_fighter_app/final/FinalDemo;/Users/dannyshicar/Documents/GitHub/card_fighter_app/sixth/FinalDemo;/Users/dannyshicar/Documents/GitHub/card_fighter_app/sixth/final;/Users/dannyshicar/Documents/GitHub/card_fighter_app/sixth/eighth;/Users/dannyshicar/Documents/GitHub/card_fighter_app/sixth/seventh;/Users/dannyshicar/Documents/GitHub/card_fighter_app/sixth/sixth;/Users/dannyshicar/Documents/GitHub/card_fighter_app/fifth/fifth;/Users/dannyshicar/Documents/GitHub/card_fighter_app/forth/forth;/Users/wangfengyi/Desktop/game/card_fighter/build/v5\"}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",

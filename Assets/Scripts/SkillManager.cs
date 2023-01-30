@@ -83,8 +83,16 @@ public class SkillManager : MonoBehaviour
         selectedSkills[currentSkillSelect] = currentDisplaySkill;
         selectedSkillImage[currentSkillSelect].sprite = skillDB.GetSkill(currentDisplaySkill).skillSprite;
         currentSkillSelect++;
-        currentDisplaySkill = skillDB.SkillCount - 1;
-        NextOption();
+        // currentDisplaySkill = skillDB.SkillCount - 1;
+        // NextOption();
+        if(getSkillCount(currentDisplaySkill) >= max_selection_per_skill)
+        {
+            NextOption();
+        }
+        else
+        {
+            UpdateSkill();
+        }
         if (currentSkillSelect == MAX_SKILL_SELECT)
         {
             StartGame();

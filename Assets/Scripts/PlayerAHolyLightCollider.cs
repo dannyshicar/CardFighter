@@ -23,7 +23,7 @@ public class PlayerAHolyLightCollider : MonoBehaviour
             if (hitTarget) return;
             else hitTarget = true;
             playerB = GameObject.Find("PlayerB");
-            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(10);
+            playerB.GetComponent<PlayerBAnimationAndMovementController>().takeDamage(40);
             Destroy(this.gameObject);
         }
 

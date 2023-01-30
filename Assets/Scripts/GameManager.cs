@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     public GameObject skillBarUI;
     // public GameObject GameRoundCountUI;
     public TMPro.TextMeshProUGUI GameRoundCountText;
+
+    //music
+    public GameObject bgm;
+    public GameObject winbgm;
+    public GameObject losebgm;
     
     void Awake()
     {
@@ -75,6 +80,10 @@ public class GameManager : MonoBehaviour
         if(gameHasEnded) return;
         gameHasEnded = true;
         Debug.Log("Game Lost!");
+        //bgm
+        bgm.SetActive(false);
+        losebgm.SetActive(true);
+
         resetRoundSettings();
         failLevelUI.SetActive(true);
         AHealthBar.SetActive(false);
@@ -94,6 +103,9 @@ public class GameManager : MonoBehaviour
         }
         gameHasEnded = true;
         Debug.Log("Game Won!");
+        //bgm
+        bgm.SetActive(false);
+        winbgm.SetActive(true);
         resetRoundSettings();
         completeLevelUI.SetActive(true);
         AHealthBar.SetActive(false);
